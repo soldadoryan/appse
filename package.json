@@ -1,0 +1,16 @@
+{
+  "name": "appse",
+  "version": "1.0.0",
+  "description": "Aplicação para criação de sistemas especialistas",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "sucrase": "^3.12.1"
+  }
+}
