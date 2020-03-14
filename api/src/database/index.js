@@ -1,9 +1,12 @@
 import Sequelize from 'sequelize';
 
+import Variavel from '../app/models/Variavel';
+
+import Questao from '../app/models/Questao';
 
 import databaseConfig from '../config/database';
 
-const models = [Msg, User];
+const models = [Variavel, Questao];
 
 class Database {
   constructor() {

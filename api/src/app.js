@@ -1,17 +1,19 @@
-import express from 'express'; // framework de backend mvc
+import express from 'express';
+import cors from 'cors';
 import routes from './routes';
+import './database';
 
 class App {
     constructor() {
-        // criando servidor
         this.server = express();
-        this.routes();
+
         this.middlewares();
+        this.routes();
     }
 
     middlewares() {
-        // permitindo manipulação de json nas rotas
         this.server.use(express.json());
+        this.server.use(cors());
     }
 
     routes() {
