@@ -11,7 +11,6 @@ import { Container, TitlePage, Painel } from '../../styles/scglobal';
 
 export default function Variaveis() {
   const [variaveis, setVariaveis] = useState([]);
-  const [variavel, setVariavel] = useState({});
 
   useEffect(() => {
     getVariaveis();
@@ -19,7 +18,6 @@ export default function Variaveis() {
 
   const getVariaveis = async () => {
     const response = (await api.get('/variaveis')).data;
-
     setVariaveis(response);
   };
 
@@ -38,7 +36,6 @@ export default function Variaveis() {
             indexesSearch={['label']}
             load={getVariaveis}
             FormCustom={FormVariaveis}
-            setItem={setVariavel}
             actionDelete='/variaveis'
           />
         </Painel>

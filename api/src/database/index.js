@@ -4,9 +4,13 @@ import Variavel from '../app/models/Variavel';
 
 import Questao from '../app/models/Questao';
 
+import Resultado from '../app/models/Resultado';
+
+import Solucao from '../app/models/Solucao';
+
 import databaseConfig from '../config/database';
 
-const models = [Variavel, Questao];
+const models = [Variavel, Questao,Resultado,Solucao];
 
 class Database {
   constructor() {

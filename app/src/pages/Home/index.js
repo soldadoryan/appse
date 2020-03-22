@@ -5,7 +5,7 @@ import CHeader from '../../components/CHeader';
 import { Page } from './styles';
 import { Container, TitlePage, Painel } from '../../styles/scglobal';
 
-export default function Questoes() {
+export default function Home() {
   return (
     <Page>
       <CHeader />

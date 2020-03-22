@@ -22,15 +22,15 @@ export default function CMenu({ history }) {
         <IoIosHelpCircleOutline />
         <span>Questões</span>
       </Button>
-      <Button to='/departments'>
+      <Button to='/resultados'>
         <IoMdInformationCircleOutline />
         <span>Resultados</span>
       </Button>
-      <Button to='/departments'>
+      <Button to='/regras'>
         <IoIosHammer />
         <span>Regras</span>
       </Button>
-      <Button to='/departments'>
+      <Button to='/solucoes'>
         <IoMdThumbsUp />
         <span>Soluções</span>
       </Button>
