@@ -18,7 +18,6 @@ export default function Variaveis() {
 
   const getVariaveis = async () => {
     const response = (await api.get('/variaveis')).data;
-
     setVariaveis(response);
   };
 
