@@ -11,7 +11,6 @@ import { Container, TitlePage, Painel } from '../../styles/scglobal';
 
 export default function Questoes() {
   const [questoes, setQuestoes] = useState([]);
-  const [questao, setQuestao] = useState({});
 
   useEffect(() => {
     getQuestoes();
@@ -38,7 +37,6 @@ export default function Questoes() {
             indexesSearch={['label', 'variavel.label']}
             load={getQuestoes}
             FormCustom={FormQuestoes}
-            setItem={setQuestao}
             actionDelete='/questoes'
           />
         </Painel>

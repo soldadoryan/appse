@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import Sistema from '../Sistema';
 
 import { Menu, Button } from './styles';
 import {
@@ -11,33 +13,37 @@ import {
 } from 'react-icons/io';
 
 export default function CMenu({ history }) {
-  return (
-    <Menu>
+  const [run, setRun] = useState(false);
 
-      <Button to='/variaveis'>
-        <IoIosList />
-        <span>Variáveis</span>
-      </Button>
-      <Button to='/questoes'>
-        <IoIosHelpCircleOutline />
-        <span>Questões</span>
-      </Button>
-      <Button to='/departments'>
-        <IoMdInformationCircleOutline />
-        <span>Resultados</span>
-      </Button>
-      <Button to='/departments'>
-        <IoIosHammer />
-        <span>Regras</span>
-      </Button>
-      <Button to='/departments'>
-        <IoMdThumbsUp />
-        <span>Soluções</span>
-      </Button>
-      <Button to='/departments'>
-        <IoIosPlay />
-        <span>Iniciar sistema</span>
-      </Button>
-    </Menu >
+  return (
+    <>
+      {(run) && <Sistema close={() => setRun(false)} />}
+      <Menu>
+        <Button to='/variaveis'>
+          <IoIosList />
+          <span>Variáveis</span>
+        </Button>
+        <Button to='/questoes'>
+          <IoIosHelpCircleOutline />
+          <span>Questões</span>
+        </Button>
+        <Button to='/departments'>
+          <IoMdInformationCircleOutline />
+          <span>Resultados</span>
+        </Button>
+        <Button to='/departments'>
+          <IoIosHammer />
+          <span>Regras</span>
+        </Button>
+        <Button to='/departments'>
+          <IoMdThumbsUp />
+          <span>Soluções</span>
+        </Button>
+        <Button onClick={() => setRun(true)}>
+          <IoIosPlay />
+          <span>Iniciar sistema</span>
+        </Button>
+      </Menu >
+    </>
   );
 }
