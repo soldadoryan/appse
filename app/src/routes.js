@@ -6,6 +6,7 @@ import Variaveis from './pages/Variaveis';
 import Questoes from './pages/Questoes';
 import Resultados from './pages/Resultados';
 import Solucoes from './pages/Solucoes';
+import Regras from './pages/Regras';
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route path="/questoes" exact component={Questoes} />
       <Route path="/resultados" exact component={Resultados} />
       <Route path="/solucoes" exact component={Solucoes} />
+      <Route path="/regras" exact component={Regras} />
     </Switch>
   );
 }

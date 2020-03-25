@@ -2,18 +2,14 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('resultados', {
+    return queryInterface.createTable('regras', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      label: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      text: {
+      content: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -29,6 +25,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('resultados');
+    return queryInterface.dropTable('regras');
   }
 };

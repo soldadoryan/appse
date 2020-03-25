@@ -1,18 +1,17 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Resultado extends Model {
+class Regra extends Model {
   static init(sequelize) {
     super.init(
       {
-        label: Sequelize.STRING,
-        text: Sequelize.STRING
+        content: Sequelize.STRING,
       },
       {
         sequelize,
-        tableName: 'resultados'
+        tableName: 'regras'
       }
     );
     return this;
   }
 }
-export default Resultado;
+export default Regra;

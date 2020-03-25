@@ -13,8 +13,8 @@ export const Backdrop = styled.div`
 export const Wrap = styled.div`
   position: fixed;
   width: 30vw;
-  height: 30vh;
-  top: 35vh;
+  min-height: 35vh;
+  top: 20vh;
   left: 35vw;
   z-index: 1051;
   background-color: white;
@@ -22,9 +22,19 @@ export const Wrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
 
   h3 {
     color: gray;
+  }
+
+  .resultado {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px 0;
+    width: 80%;
   }
 
   .wrapbuttons {

@@ -19,11 +19,12 @@ class VariavelController {
 
     async update(req, res) { // update
         const { id } = req.params;
-        const { label } = req.body;
+        const { label, value } = req.body;
 
         const variavel = await Variavel.findByPk(id);
 
         variavel.label = label;
+        variavel.value = value;
 
         variavel.save();
 

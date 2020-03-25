@@ -18,6 +18,9 @@ export default function Questoes() {
 
   const getQuestoes = async () => {
     const response = (await api.get('/questoes')).data;
+
+    console.log(response);
+
     setQuestoes(response);
   };
 

@@ -2,10 +2,11 @@ import Resultado from '../models/Resultado';
 
 class ResultadoController {
     async store(req, res) { // Insert
-        const { label } = req.body;
+        const { label, text } = req.body;
 
         const resultado = await Resultado.create({
-            label
+            label,
+            text
         });
 
         res.json({ resultado, message: 'Resultado criado com sucesso', success: true });
@@ -19,11 +20,12 @@ class ResultadoController {
 
     async update(req, res) { // update
         const { id } = req.params;
-        const { label } = req.body;
+        const { label, text } = req.body;
 
         const resultado = await Resultado.findByPk(id);
 
         resultado.label = label;
+        resultado.text = text;
 
         resultado.save();
 

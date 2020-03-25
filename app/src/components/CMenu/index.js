@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import api from '../../services/api';
 
 import Sistema from '../Sistema';
 
@@ -14,10 +16,21 @@ import {
 
 export default function CMenu({ history }) {
   const [run, setRun] = useState(false);
+  const [questoes, setQuestoes] = useState([]);
+
+  const getQuestoes = async () => {
+    const response = (await api.get('/questoes')).data;
+
+    setQuestoes(response);
+  };
+
+  useEffect(() => {
+    getQuestoes();
+  }, []);
 
   return (
     <>
-      {(run) && <Sistema close={() => setRun(false)} />}
+      {(run) && <Sistema questoes={questoes} close={() => setRun(false)} />}
       <Menu>
         <Button to='/variaveis'>
           <IoIosList />
@@ -31,13 +44,13 @@ export default function CMenu({ history }) {
           <IoMdInformationCircleOutline />
           <span>Resultados</span>
         </Button>
-        <Button to='/regras'>
-          <IoIosHammer />
-          <span>Regras</span>
-        </Button>
         <Button to='/solucoes'>
           <IoMdThumbsUp />
           <span>Soluções</span>
+        </Button>
+        <Button to='/regras'>
+          <IoIosHammer />
+          <span>Regras</span>
         </Button>
         <Button onClick={() => setRun(true)}>
           <IoIosPlay />

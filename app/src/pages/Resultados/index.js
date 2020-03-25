@@ -30,10 +30,10 @@ export default function Resultados() {
 
         <Painel className="painelresultado">
           <CTable
-            titles={['#', 'Label']}
+            titles={['#', 'Label', 'Mensagem']}
             values={resultados}
-            indexes={['id', 'label']}
-            indexesSearch={['label']}
+            indexes={['id', 'label', 'text']}
+            indexesSearch={['label', 'text']}
             load={getResultados}
             FormCustom={FormResultados}
             actionDelete='/resultados'

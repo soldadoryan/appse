@@ -5,15 +5,16 @@ import { toast } from 'react-toastify';
 import { WrapForm } from './styles';
 
 import CInput from '../../CInput';
-import CSelect from '../../CSelect';
 import CButton from '../../CButton';
 
 export default function Form({ item, success, close }) {
 
   const [label, setLabel] = useState('');
+  const [text, setText] = useState('');
 
   useEffect(() => {
     setLabel(item.label);
+    setText(item.text);
   }, [item]);
 
   const submitForm = async e => {
@@ -24,10 +25,12 @@ export default function Form({ item, success, close }) {
     if (item.id) {
       response = (await api.put(`/resultados/${item.id}`, {
         label,
+        text
       })).data;
     } else {
       response = (await api.post('/resultados', {
         label,
+        text
       })).data;
     }
 
@@ -44,6 +47,7 @@ export default function Form({ item, success, close }) {
     <WrapForm onSubmit={submitForm}>
       <h2>{`${(item.id) ? 'Edição' : 'Cadastro'} de resultado`}</h2>
       <CInput val={label} required={true} change={e => setLabel(e)} type='text' label='Label' />
+      <CInput val={text} required={true} change={e => setText(e)} type='text' label='Mensagem' />
       <CButton title='Salvar' cstyle='primary small' />
     </WrapForm>
   );
