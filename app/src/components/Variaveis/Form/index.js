@@ -42,7 +42,7 @@ export default function Form({ item, success, close }) {
 
   return (
     <WrapForm onSubmit={submitForm}>
-      <h2>{`${(item.id) ? 'Edição' : 'Cadastro'} de usuário`}</h2>
+      <h2>{`${(item.id) ? 'Edição' : 'Cadastro'} de variável`}</h2>
       <CInput val={label} required={true} change={e => setLabel(e)} type='text' label='Label' />
       <CButton title='Salvar' cstyle='primary small' />
     </WrapForm>
