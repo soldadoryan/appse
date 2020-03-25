@@ -37,6 +37,11 @@ export const Wrap = styled.div`
     width: 80%;
   }
 
+  small {
+    color: gray;
+    margin-top: 10px;
+  }
+
   .wrapbuttons {
     display: flex;
     margin-top: 25px;

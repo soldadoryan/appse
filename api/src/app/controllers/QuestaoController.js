@@ -3,10 +3,10 @@ import Variavel from '../models/Variavel';
 
 class QuestaoController {
   async store(req, res) { // Insert
-    const { label, id_variavel } = req.body;
+    const { label, explicacao, id_variavel } = req.body;
 
     const questao = await Questao.create({
-      label, id_variavel
+      label, explicacao, id_variavel
     });
 
     res.json({ questao, message: 'Questão criada com sucesso', success: true });
@@ -25,11 +25,12 @@ class QuestaoController {
 
   async update(req, res) { // update
     const { id } = req.params;
-    const { label, id_variavel } = req.body;
+    const { label, explicacao, id_variavel } = req.body;
 
     const questao = await Questao.findByPk(id);
 
     questao.label = label;
+    questao.explicacao = explicacao;
     questao.id_variavel = id_variavel;
 
     questao.save();

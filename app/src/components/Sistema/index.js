@@ -57,7 +57,8 @@ export default function Sistema({ close, questoes }) {
         ) : (
             <>
               <h3>Sistema Especialista</h3>
-              <h2>{(questao !== { label: '' }) && questao.label}</h2>
+              <h2>{questao.label}</h2>
+              <small>{questao.explicacao}</small>
               <div className='wrapbuttons'>
                 <CButton click={() => responder('sim')} cstyle='primary' title='Sim' />
                 <CButton click={() => responder('nao')} cstyle='danger' title='Não' />

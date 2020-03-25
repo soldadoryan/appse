@@ -5,6 +5,7 @@ class Questao extends Model {
     super.init(
       {
         label: Sequelize.STRING,
+        explicacao: Sequelize.STRING,
         id_variavel: Sequelize.INTEGER,
       },
       {

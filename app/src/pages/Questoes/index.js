@@ -33,9 +33,9 @@ export default function Questoes() {
 
         <Painel className="painelquestao">
           <CTable
-            titles={['#', 'Label', 'Variável']}
+            titles={['#', 'Label', 'Explicação', 'Variável']}
             values={questoes}
-            indexes={['id', 'label', 'variavel.label']}
+            indexes={['id', 'label', 'explicacao', 'variavel.label']}
             indexesSearch={['label', 'variavel.label']}
             load={getQuestoes}
             FormCustom={FormQuestoes}
